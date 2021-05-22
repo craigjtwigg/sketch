@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+body, html {
+    background-color: black;
+    color: snow;
+    font-family: 'DotGothic16', Verdana;
+    font-size: 16px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+a {
+    color: tomato;
+    text-decoration: none;
+}
+
+a:hover {
+    color:rgb(245, 137, 118);
+    text-decoration: underline;
+}
+
+
+
+.container {
+    display: grid;
+    width: 70vh;
+    height: 70vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    color: black;
+    justify-content: stretch;
+    align-content: stretch;
+
+}
+
+.square {
+    background-color: yellow;
+    border: 1px solid black;
+    justify-self: stretch;
+    align-self: stretch;
+}
+
+.avi {
+    max-height: 100px;
+    width: auto;
+    margin-top: 30px;
+    border: 2px solid tomato;
+    border-radius: 50%;
+}
