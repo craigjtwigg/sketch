@@ -1,6 +1,29 @@
+window.addEventListener("load", defaultCanvas);
 const canvas = document.querySelector(".canvas");
-canvas.style.gridTemplateColumns = `repeat(${canvasSize()}, 1fr)`;
-canvas.style.gridTemplateRows = `repeat(${canvasSize()}, 1fr)`;
+
+function defaultCanvas() {
+    setCanvasResolution(16);
+    generateCanvas(16);
+    console.log("Let's Sketch!");
+}
+
+// function resetCanvas(){
+  // document.querySelectorAll(".square").remove();
+// } 
+
+function setCanvasResolution(canvasSize){
+    canvas.style.gridTemplateColumns = `repeat(${canvasSize}, 1fr)`;
+    canvas.style.gridTemplateRows = `repeat(${canvasSize}, 1fr)`;
+    }
+
+function generateCanvas(canvasSize) {
+    for (let i=0; i < canvasSize * canvasSize; i++) {
+        const squarediv = document.createElement("div");
+        squarediv.className = "square";
+        squarediv.addEventListener("mouseover", sketch)
+        canvas.appendChild(squarediv);
+    }
+    }
 
 const sizeButton = document.querySelector('.sizeButton');
 sizeButton.addEventListener('click', getSize);
@@ -10,36 +33,13 @@ function getSize(e) {
    if (newSize > 100) {
        return alert("Oh no, that number is too big! Pick a number up to 100!");
    } else {
-   console.log(newSize);
+       // resetCanvas();
+       setCanvasResolution(newSize);
+       generateCanvas(newSize);
    }
-}
-
-function canvasSize() {
-    let size = 16;
-    return size;
-}
-
-
-function generateSquare() {
-const squarediv = document.createElement("div");
-squarediv.className = "square";
-squarediv.addEventListener("mouseenter", sketch)
-canvas.appendChild(squarediv);
-}
-
-
-
-function generateCanvas() {
-    for (let i=0; i < `${canvasSize()}` * `${canvasSize()}`; i++) {
-        generateSquare();
-    }
 }
 
 function sketch(e){
     const pencilColor = document.getElementById("colorpicker").value;
     e.target.style.backgroundColor = `${pencilColor}`;
 }
-
-
-    
-generateCanvas();
