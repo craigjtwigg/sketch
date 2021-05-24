@@ -7,9 +7,10 @@ function defaultCanvas() {
     console.log("Let's Sketch!");
 }
 
-// function resetCanvas(){
-  // document.querySelectorAll(".square").remove();
-// } 
+function resetCanvas(){
+let canvasPixels = document.querySelectorAll(".square");
+canvasPixels.forEach(pixel => pixel.remove());
+ } 
 
 function setCanvasResolution(canvasSize){
     canvas.style.gridTemplateColumns = `repeat(${canvasSize}, 1fr)`;
@@ -33,7 +34,7 @@ function getSize(e) {
    if (newSize > 100) {
        return alert("Oh no, that number is too big! Pick a number up to 100!");
    } else {
-       // resetCanvas();
+       resetCanvas();
        setCanvasResolution(newSize);
        generateCanvas(newSize);
    }
