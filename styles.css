@@ -59,6 +59,19 @@ h1 {
     font-family: 'DotGothic16', Verdana;
     padding: 0.7rem;
     box-shadow: 3px 3px black;
+    width: 50vh;
+    margin-bottom: 1rem;
+}
+
+#magicmode {
+    background-color: #E91E63;
+    border: 1px solid black;
+    font-family: 'DotGothic16', Verdana;
+    color: yellow;
+    padding: 0.7rem;
+    box-shadow: 3px 3px black;
+    width: 50vh;
+    margin-bottom: 1rem;
 }
 
 .colorpicker {
@@ -71,6 +84,7 @@ h1 {
   border: transparent;
   background-color: transparent;
 }
+
 
 .avi {
     max-height: 20px;
@@ -85,4 +99,9 @@ p {
     .canvas{
   height: 70vw;
     width: 70vw;
-    }}
+    }
+
+    .sizeButton {
+        width: 50vw;
+    }
+    }

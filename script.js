@@ -30,17 +30,24 @@ const sizeButton = document.querySelector('.sizeButton');
 sizeButton.addEventListener('click', getSize);
 
 function getSize(e) {
-   let newSize = prompt("Enter a number between up to 100!", "");
-   if (newSize > 100) {
-       return alert("Oh no, that number is too big! Pick a number up to 100!");
-   } else {
-       resetCanvas();
-       setCanvasResolution(newSize);
-       generateCanvas(newSize);
+   let newSize = prompt("Enter a number between up to 75!", "");
+   if (newSize < 75) {
+    resetCanvas();
+    setCanvasResolution(newSize);
+    generateCanvas(newSize);
+   } 
+   else {
+    return alert ("Oops! Try a number upto 75!");
    }
 }
 
 function sketch(e){
     const pencilColor = document.getElementById("colorpicker").value;
     e.target.style.backgroundColor = `${pencilColor}`;
-}
+    const magicmode = document.getElementById("magicmode");
+    magicmode.addEventListener("click", function() {
+        if(this.click) {
+            const rainbow = (Math.floor(Math.random() * 360));
+            e.target.style.backgroundColor = `hsl(${rainbow}, 100%, 50%)`;
+        }
+    })}
