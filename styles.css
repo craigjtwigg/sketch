@@ -107,4 +107,13 @@ p {
     #magicmode {
         width: 50vw;
     }
+
+    .pencil{
+        width: 70vw;
+        height: 20vw;
+    }
+
+    h1 {
+        font-size: 3rem;
+}
     }
